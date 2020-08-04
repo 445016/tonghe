@@ -7,7 +7,7 @@
             {m:banner field="title,image,url,typeid,status" limit="10"}
                 {loop $data $v}
                     <div class="slide-item">
-                        <img src="{$v[image]}" alt="{$v[title]}" title="{$v[title]}"  class="image-fit" />
+                        <a href="{$v[url]}"><img src="{$v[image]}" alt="{$v[title]}" title="{$v[title]}"  class="image-fit" /></a>
                     </div>
                 {/loop}
         </div>
