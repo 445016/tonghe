@@ -62,103 +62,6 @@
             </div>
         </div>
     </section>
-
-    <!-- End About Us -->
-<!--    &lt;!&ndash; Start Flights &ndash;&gt;-->
-<!--    <section class="section-padding flights-sec bg-light-white">-->
-<!--        <div class="container">-->
-<!--            <div class="section-header">-->
-<!--                <div class="section-heading">-->
-<!--                    <h3 class="text-custom-black">Recommended Products</h3>-->
-<!--                    <div class="section-description">-->
-<!--                        <p class="text-light-dark">Devoted to providing better services, lower cost</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="row">-->
-<!--                <div class="col-12">-->
-<!--                    <div class="flights-slider arrow-layout-2 row">-->
-<!--                        {m:lists field="id,title,thumb,url,price,description" modelid="2" thumb="1" limit="6" flag="4"}-->
-<!--                        {loop $data $v}-->
-<!--                        <div class="slide-item col-12">-->
-<!--                            <div class="flights-grid">-->
-<!--                                <div class="flights-grid-wrapper bx-wrapper">-->
-<!--                                    <div class="image-sec animate-img">-->
-<!--                                        <a href="{$v[url]}">-->
-<!--                                            <img src="{get_thumb($v['thumb'])}" class="full-width" alt="img">-->
-<!--                                        </a>-->
-<!--                                    </div>-->
-<!--                                    <div class="flights-grid-caption padding-20 bg-custom-white p-relative">-->
-<!--                                        <div class="heading-sec">-->
-<!--                                            <div class="left-side">-->
-<!--                                                <div class="title">-->
-<!--                                                    <h4 class="fs-16">-->
-<!--                                                        <a href="flight-detail.html" class="text-custom-black">{$v[title]}</a>-->
-<!--                                                        <span class="text-light-dark">{$v[description]}</span>-->
-<!--                                                    </h4>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                            <div class="right-side">-->
-<!--                                                <span class="price"><small>Price/Pieces</small>${$v[price]}</span>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="action">-->
-<!--                                            <a class="btn-second btn-small" href="flight-detail.html" tabindex="-1">View More</a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    {/loop}-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    &lt;!&ndash; End Flights &ndash;&gt;-->
-    <!-- Start Hotels -->
-<!--    <section class="section-padding hotels-sec bg-light-white">-->
-<!--        <div class="container">-->
-<!--            <div class="section-header">-->
-<!--                <div class="section-heading">-->
-<!--                    <h3 class="text-custom-black">Recommended Products</h3>-->
-<!--                    <div class="section-description">-->
-<!--                    <p class="text-light-dark">Devoted to providing better services, lower cost</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="row">-->
-<!--                <div class="col-12">-->
-<!--                    <div class="hotel-slider arrow-layout-2 row">-->
-<!--                        {m:lists field="id,title,thumb,url,price,description" modelid="2" thumb="1" limit="6"}-->
-<!--                        {loop $data $v}-->
-<!--                            <div class="slide-item col-12">-->
-<!--                                <div class="hotel-grid">-->
-<!--                                    <div class="hotel-grid-wrapper bx-wrapper">-->
-<!--                                        <div class="image-sec animate-img">-->
-<!--                                            <a href="{$v[url]}">-->
-<!--                                                <img src="{get_thumb($v['thumb'])}" class="full-width" alt="img">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                        <div class="hotel-grid-caption padding-20 bg-custom-white p-relative">-->
-<!--                                            <h4 class="title fs-16"><a href="hotel-detail.html" class="text-custom-black">{$v[title]}<small class="text-light-dark">{$v[description]}</small></a></h4>-->
-<!--                                            <span class="price"><small>Price/Piece</small>${$v[price]}</span>-->
-<!--                                            <div class="action">-->
-<!--                                                <a class="btn-second btn-small" href="{$v[url]}">View</a>-->
-<!--&lt;!&ndash;                                                <a class="btn-first btn-submit" href="booking.html">Book</a>&ndash;&gt;-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        {/loop}-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-    <!-- End Hotels -->
-    <!-- Start Our work -->
 {php $data = get_childcat(6);}
 {loop $data $k=>$v}
     <div class="subheader-category normal-bg section-padding">
@@ -273,61 +176,6 @@
         </div>
     </div>
 </section>
-<!-- End Our Services -->
-<!--<section class="section-padding our-work-sec">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                    {php $data = get_childcat(6);}-->
-<!--                    {loop $data $k=>$v}-->
-<!--                    {if $k == 0}-->
-<!--                        <div class="col-lg-6">-->
-<!--                            <div class="work-sec animate-img first-box">-->
-<!--                                    <a href="{$v[pclink]}">-->
-<!--                                        <img src="{$v[catimg]}" class="image-fit" alt="img">-->
-<!--                                        <div class="text-wrapper">-->
-<!--                                            <h2 class="text-custom-white no-margin fw-600">{$v[catname]}</h2>-->
-<!--                                            <p class="text-custom-white no-margin">{$v[subtitle]}</p>-->
-<!--                                        </div>-->
-<!--                                    </a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    {else}-->
-<!--                    <div class="col-lg-6">-->
-<!--                        <div class="row">-->
-<!--                            {if $k == 1 || $k == 2}-->
-<!--                            <div class="col-sm-6">-->
-<!--                                <div class="work-sec animate-img">-->
-<!--                                    <a href="{$v[pclink]}">-->
-<!--                                        <img src="{$v[catimg]}" class="image-fit" alt="img">-->
-<!--                                        <div class="text-wrapper">-->
-<!--                                            <h2 class="text-custom-white no-margin fw-600">{$v[catname]}</h2>-->
-<!--                                            <p class="text-custom-white no-margin">{$v[subtitle]}</p>-->
-<!--                                        </div>-->
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            {elseif $k == 3}-->
-<!--                            <div class="work-sec animate-img">-->
-<!--                                <a href="{$v[pclink]}">-->
-<!--                                    <img src="{$v[catimg]}" class="image-fit" alt="img">-->
-<!--                                    <div class="text-wrapper">-->
-<!--                                        <h2 class="text-custom-white no-margin fw-600">{$v[catname]}</h2>-->
-<!--                                        <p class="text-custom-white no-margin">{$v[subtitle]}</p>-->
-<!--                                    </div>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                            {/if}-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    {/if}-->
-<!--                    {/loop}-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    &lt;!&ndash; End Our work &ndash;&gt;-->
-
-
-
     <!-- Start Our Team -->
     <section class="section-padding parallax our-team">
         <div class="overlay overlay-bg-black"></div>
@@ -351,9 +199,9 @@
                                         <div class="overlay-box">
                                             <div class="overlay-inner p-relative full-height">
                                                 <ul class="team-social-box custom">
-                                                    <li class="linkedin"><a href="#" class="fab fa-linkedin fs-16"></a><span class="social-name fs-12 text-custom-white">linkedin</span></li>
-                                                    <li class="facebook"><a href="#" class="fab fa-facebook-f fs-16"></a><span class="social-name fs-12 text-custom-white">facebook</span></li>
-                                                    <li class="twitter"><a href="#" class="fab fa-twitter fs-16"></a><span class="social-name fs-12 text-custom-white">twitter</span></li>
+                                                    <li class="linkedin"><a href="{$site[link]}" class="fab fa-linkedin fs-16"></a><span class="social-name fs-12 text-custom-white">linkedin</span></li>
+                                                    <li class="facebook"><a href="{$site[facebook]}" class="fab fa-facebook-f fs-16"></a><span class="social-name fs-12 text-custom-white">facebook</span></li>
+                                                    <li class="twitter"><a href="{$site[twitter]}" class="fab fa-twitter fs-16"></a><span class="social-name fs-12 text-custom-white">twitter</span></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -376,9 +224,9 @@
                                         <div class="overlay-box">
                                             <div class="overlay-inner p-relative full-height">
                                                 <ul class="team-social-box custom">
-                                                    <li class="linkedin"><a href="#" class="fab fa-linkedin fs-16"></a><span class="social-name fs-12 text-custom-white">linkedin</span></li>
-                                                    <li class="facebook"><a href="#" class="fab fa-facebook-f fs-16"></a><span class="social-name fs-12 text-custom-white">facebook</span></li>
-                                                    <li class="twitter"><a href="#" class="fab fa-twitter fs-16"></a><span class="social-name fs-12 text-custom-white">twitter</span></li>
+                                                    <li class="linkedin"><a href="{$site[link]}" class="fab fa-linkedin fs-16"></a><span class="social-name fs-12 text-custom-white">linkedin</span></li>
+                                                    <li class="facebook"><a href="{$site[facebook]}" class="fab fa-facebook-f fs-16"></a><span class="social-name fs-12 text-custom-white">facebook</span></li>
+                                                    <li class="twitter"><a href="{$site[twitter]}" class="fab fa-twitter fs-16"></a><span class="social-name fs-12 text-custom-white">twitter</span></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -401,9 +249,9 @@
                                         <div class="overlay-box">
                                             <div class="overlay-inner p-relative full-height">
                                                 <ul class="team-social-box custom">
-                                                    <li class="linkedin"><a href="#" class="fab fa-linkedin fs-16"></a><span class="social-name fs-12 text-custom-white">linkedin</span></li>
-                                                    <li class="facebook"><a href="#" class="fab fa-facebook-f fs-16"></a><span class="social-name fs-12 text-custom-white">facebook</span></li>
-                                                    <li class="twitter"><a href="#" class="fab fa-twitter fs-16"></a><span class="social-name fs-12 text-custom-white">twitter</span></li>
+                                                    <li class="linkedin"><a href="{$site[link]}" class="fab fa-linkedin fs-16"></a><span class="social-name fs-12 text-custom-white">linkedin</span></li>
+                                                    <li class="facebook"><a href="{$site[facebook]}" class="fab fa-facebook-f fs-16"></a><span class="social-name fs-12 text-custom-white">facebook</span></li>
+                                                    <li class="twitter"><a href="{$site[twitter]}" class="fab fa-twitter fs-16"></a><span class="social-name fs-12 text-custom-white">twitter</span></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -426,9 +274,9 @@
                                         <div class="overlay-box">
                                             <div class="overlay-inner p-relative full-height">
                                                 <ul class="team-social-box custom">
-                                                    <li class="linkedin"><a href="#" class="fab fa-linkedin fs-16"></a><span class="social-name fs-12 text-custom-white">linkedin</span></li>
-                                                    <li class="facebook"><a href="#" class="fab fa-facebook-f fs-16"></a><span class="social-name fs-12 text-custom-white">facebook</span></li>
-                                                    <li class="twitter"><a href="#" class="fab fa-twitter fs-16"></a><span class="social-name fs-12 text-custom-white">twitter</span></li>
+                                                    <li class="linkedin"><a href="{$site[link]}" class="fab fa-linkedin fs-16"></a><span class="social-name fs-12 text-custom-white">linkedin</span></li>
+                                                    <li class="facebook"><a href="{$site[facebook]}" class="fab fa-facebook-f fs-16"></a><span class="social-name fs-12 text-custom-white">facebook</span></li>
+                                                    <li class="twitter"><a href="{$site[twitter]}" class="fab fa-twitter fs-16"></a><span class="social-name fs-12 text-custom-white">twitter</span></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -451,9 +299,9 @@
                                         <div class="overlay-box">
                                             <div class="overlay-inner p-relative full-height">
                                                 <ul class="team-social-box custom">
-                                                    <li class="linkedin"><a href="#" class="fab fa-linkedin fs-16"></a><span class="social-name fs-12 text-custom-white">linkedin</span></li>
-                                                    <li class="facebook"><a href="#" class="fab fa-facebook-f fs-16"></a><span class="social-name fs-12 text-custom-white">facebook</span></li>
-                                                    <li class="twitter"><a href="#" class="fab fa-twitter fs-16"></a><span class="social-name fs-12 text-custom-white">twitter</span></li>
+                                                    <li class="linkedin"><a href="{$site[link]}" class="fab fa-linkedin fs-16"></a><span class="social-name fs-12 text-custom-white">linkedin</span></li>
+                                                    <li class="facebook"><a href="{$site[facebook]}" class="fab fa-facebook-f fs-16"></a><span class="social-name fs-12 text-custom-white">facebook</span></li>
+                                                    <li class="twitter"><a href="{$site[twitter]}" class="fab fa-twitter fs-16"></a><span class="social-name fs-12 text-custom-white">twitter</span></li>
                                                 </ul>
                                             </div>
                                         </div>
