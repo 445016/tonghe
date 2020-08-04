@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="keywords" content="#">
+	<meta name="description" content="#">
+	<title>Homepage</title>
+	<!-- Fav and touch icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{STATIC_URL}/th/images/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{STATIC_URL}/th/images/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{STATIC_URL}/th/images/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" href="{STATIC_URL}/th/images/favicon.ico">
+	<link rel="shortcut icon" href="{STATIC_URL}/th/images/favicon.ico">
+	<!-- Bootstrap -->
+	<link href="{STATIC_URL}/th/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Fontawesome -->
+	<link href="{STATIC_URL}/th/css/font-awesome.css" rel="stylesheet">
+	<!-- Flaticons -->
+	<link href="{STATIC_URL}/th/css/font/flaticon.css" rel="stylesheet">
+	<!-- Slick Slider -->
+	<link href="{STATIC_URL}/th/css/slick.css" rel="stylesheet">
+	<!-- Range Slider -->
+	<link href="{STATIC_URL}/th/css/ion.rangeSlider.min.css" rel="stylesheet">
+	<!-- Datepicker -->
+	<link href="{STATIC_URL}/th/css/datepicker.css" rel="stylesheet">
+	<!-- magnific popup -->
+	<link href="{STATIC_URL}/th/css/magnific-popup.css" rel="stylesheet">
+	<!-- Nice Select -->
+	<link href="{STATIC_URL}/th/css/nice-select.css" rel="stylesheet">
+	<!-- Custom Stylesheet -->
+	<link href="{STATIC_URL}/th/css/style.css" rel="stylesheet">
+	<!-- Custom Responsive -->
+	<link href="{STATIC_URL}/th/css/responsive.css" rel="stylesheet">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+	<!-- CSS for IE -->
+	<!--[if lte IE 9]>
+	<link rel="stylesheet" type="text/css" href="css/ie.css" />
+	<![endif]-->
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+	<![endif]-->
+	<!-- place -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	{$site[site_code]}
+</head>
+<body>
+<!--网站头部-->
+<header class="header">
+	<!-- Topbar -->
+	<div class="topbar bg-custom-blue">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-2">
+					<div class="left-side">
+						<ul class="custom-flex">
+							<li>
+								<a href="#" class="text-custom-white">
+									<i class="fab fa-facebook-f"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="text-custom-white">
+									<i class="fab fa-twitter"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="text-custom-white">
+									<i class="fab fa-linkedin"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="left-side">
+						<ul class="custom-flex">
+							<li>
+								<a href="#" class="text-custom-white">Email:{$site[Email]}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<div class="left-side">
+						<ul class="custom-flex">
+							<li>
+								<a href="#" class="text-custom-white">WhatsApp:{$site[WhatsApp]}</a>
+							</li>
+<!--							<li>-->
+<!--								<select>-->
+<!--									<option>USD</option>-->
+<!--									<option>INR</option>-->
+<!--									<option>EURO</option>-->
+<!--								</select>-->
+<!--							</li>-->
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Topbar -->
+	<!-- Navigation -->
+	<div class="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="main-navigation">
+						<div class="logo">
+							<a href="{SITE_URL}">
+								<img src="{$site[site_logo]}" class="img-fluid image-fit" alt="{$site[site_name]}">
+							</a>
+						</div>
+						<div class="main-menu">
+							<div class="logo">
+								<a href="index.html">
+									<img src="{STATIC_URL}/th/images/toor-logo.png" class="img-fluid image-fit" alt="img">
+								</a>
+							</div>
+							<nav>
+								<ul class="custom-flex">
+									<li class="menu-item"><a {if !isset($catid)} class="active" {/if} href="{SITE_URL}">Home</a></li>
+									{m:nav field="catid,catname,arrchildid,pclink,type" where="parentid=0" limit="20"}
+									{loop $data $v}
+									<li class="menu-item {if $v['arrchildid']!=$v['catid']} menu-item-has-children {/if}" >
+										<a {if isset($catid) && $v['catid']==$catid} class="current" {/if} href="{$v[pclink]}" {if $v['type']==2} target="_blank" {/if}>{$v[catname]}</a>
+										<!-- 这里是二级栏目的循环，不需要的可以删除，代码开始 -->
+										{if $v['arrchildid']!=$v['catid']}
+											{php $r = get_childcat($v['catid']);}
+											<ul class="custom sub-menu">
+													{loop $r $v}
+														{if $v['arrchildid']!=$v['catid']}
+														<li class="menu-item menu-item-has-children">
+															<a href="#" class="text-custom-white">{$v[catname]}</a>
+															<ul class="custom sub-menu">
+																{php $r1 = get_childcat($v['catid']);}
+																{loop $r1 $v}
+																	<li class="menu-item">
+																		<a href="{$v[pclink]}" class="text-custom-white">{$v[catname]}</a>
+																	</li>
+																{/loop}
+															</ul>
+														</li>
+														{else}
+															<li class="menu-item">
+																<a href="{$v[pclink]}" class="text-custom-white">{$v[catname]}</a>
+															</li>
+														{/if}
+													{/loop}
+											</ul>
+										{/if}
+										<!-- 这里是二级栏目的循环，不需要的可以删除，代码结束 -->
+									</li>
+									{/loop}
+								</ul>
+							</nav>
+						</div>
+						<div class="hamburger-menu">
+							<div class="menu-btn">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Navigation -->
+</header>

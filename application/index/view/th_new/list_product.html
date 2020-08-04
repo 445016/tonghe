@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	  <title>{$seo_title}</title>
+	  <link href="{STATIC_URL}css/yzm-common.css" rel="stylesheet" type="text/css" />
+	  <link href="{STATIC_URL}css/yzm-style.css" rel="stylesheet" type="text/css" />
+	  <script type="text/javascript" src="{STATIC_URL}js/jquery-1.8.2.min.js"></script>
+	  <script type="text/javascript" src="{STATIC_URL}js/yzm-front.js"></script>
+	  <meta name="keywords" content="{$keywords}" />
+	  <meta name="description" content="{$description}" />
+  </head>
+  <body>
+	{m:include "index","header"}
+	<!-- Start Subheader -->
+	<div class="subheader normal-bg section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="text-custom-white">{get_catname($catid)}</h1>
+					<ul class="custom-flex justify-content-center">
+						<li class="active fw-500">
+							{get_location($catid)}
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Subheader -->
+	<!-- Start Blog -->
+	<section class="section-padding bg-light-white">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="listing-top-heading mb-xl-20">
+						<h6 class="no-margin text-custom-black">Showing Results</h6>
+					</div>
+				</div>
+				{m:lists field="title,url,color,thumb,price,description" catid="$catid" limit="10" page="page"}
+				{loop $data $v}
+				<div class="col-lg-4 col-md-6">
+					<div class="flights-grid mb-xl-30">
+						<div class="flights-grid-wrapper bx-wrapper">
+							<div class="image-sec animate-img">
+								<a href="{$v[url]}">
+									<img src="{get_thumb($v['thumb'])}" class="full-width" alt="img" title="{$v['title']}" alt="{$v['title']}">
+								</a>
+							</div>
+							<div class="flights-grid-caption padding-20 bg-custom-white p-relative">
+								<div class="heading-sec">
+									<div class="left-side">
+										<div class="title">
+											<h4 class="fs-16">
+												<a href="{$v[url]}" class="text-custom-black">{$v['title']}</a>
+												<span class="text-light-dark">{$v['description']}</span>
+											</h4>
+										</div>
+									</div>
+									<div class="right-side">
+										<span class="price"><small>Price/pcs</small>${$v[price]}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{/loop}
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<nav>
+						<ul class="pagination justify-content-center">
+							{$pages}
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Blog -->
+	{m:include "index","footer"}
