@@ -190,7 +190,24 @@
 <!-- magnific popup -->
 <script src="{STATIC_URL}/th/js/jquery.magnific-popup.min.js"></script>
 <!-- Maps -->
-<script src="https://ditu.google.cn/maps/api/js?key=AIzaSyDnd9JwZvXty-1gHZihMoFhJtCXmHfeRQg"></script>
+<script>
+    function initMap() {
+        var myLatLng = {lat: -25.363, lng: 131.044};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Tonghe International Trading Co., LTD'
+        });
+    }
+</script>
+<script src="https://ditu.google.cn/maps/api/js?key=AIzaSyDnd9JwZvXty-1gHZihMoFhJtCXmHfeRQg&callback=initMap"></script>
+
 <!-- Custom Js -->
 <script src="{STATIC_URL}/th/js/custom.js"></script>
 <!-- /Place all Scripts Here -->
