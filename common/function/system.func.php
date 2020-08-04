@@ -370,13 +370,13 @@ function get_location($catid, $is_mobile=false, $self=true, $symbol=' &nbsp;'){
 	$catid = intval($catid);
 	$data = explode(',', get_category($catid, 'arrparentid'));
 	if($is_mobile){
-		$str = '<a href="'.U('mobile/index/init').'">首页</a>';
+		$str = '<a href="'.U('mobile/index/init').'">Home</a>';
 		foreach($data as $v){
 			if($v) $str .= $symbol.'<a href="'.U('mobile/index/lists', array('catid'=>$v)).'">'.get_category($v, 'mobname').'</a>';
 		}
 		if($self) $str .= $symbol.'<a href="'.U('mobile/index/lists', array('catid'=>$catid)).'">'.get_category($catid, 'mobname').'</a>';
 	}else{
-		$str = '<a href="'.SITE_URL.'">首页</a>';
+		$str = '<a href="'.SITE_URL.'">Home</a>';
 		foreach($data as $v){
 			if($v) $str .= $symbol.'<a href="'.get_category($v, 'pclink').'">'.get_category($v, 'catname').'</a>';
 		}
