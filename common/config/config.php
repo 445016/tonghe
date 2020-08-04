@@ -10,7 +10,7 @@ return array(
     'set_pathinfo'       => false,         //Nginx默认不支持PATHINFO模式，需配置此项为true，则Nginx可支持PATHINFO，系统默认为false
     
     //数据库配置
-    'db_type' => 'pdo',     	    // 数据库链接扩展 , 支持 pdo | mysqli | mysql
+    'db_type' => 'mysql',     	    // 数据库链接扩展 , 支持 pdo | mysqli | mysql
     'db_host' => '127.0.0.1',       // 服务器地址
     'db_name' => 'yzmcms',		    // 数据库名
     'db_user' => 'yzmcms',            // 用户名
