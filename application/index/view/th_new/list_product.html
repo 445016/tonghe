@@ -37,7 +37,7 @@
 						<h6 class="no-margin text-custom-black">Showing Results</h6>
 					</div>
 				</div>
-				{m:lists field="title,url,color,thumb,price,description" catid="$catid" limit="10" page="page"}
+				{m:lists field="title,url,color,thumb,price,description,unit" catid="$catid" limit="10" page="page"}
 				{loop $data $v}
 				<div class="col-lg-4 col-md-6">
 					<div class="flights-grid mb-xl-30">
@@ -58,7 +58,7 @@
 										</div>
 									</div>
 									<div class="right-side">
-										<span class="price"><small>Price/pcs</small>${$v[price]}</span>
+										<span class="price"><small>Price/${$v[unit]}</small>${$v[price]}</span>
 									</div>
 								</div>
 							</div>
