@@ -281,7 +281,7 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="blog-slider arrow-layout-2 row">
-					{m:hits field="title,url,thumb,description,price" catid="$catid" limit="10"}
+					{m:hits field="title,url,thumb,description,price,unit" catid="$catid" limit="10"}
 					{loop $data $k=>$v1}
 					{php $k=$k+1;}
 					<article class="col-12 post slide-item">
@@ -303,7 +303,7 @@
 								</div>
 							</div>
 							<div class="post-footer">
-								<h4 class="title fs-16"><span class="price1">${$v1['price']}<span class="small1">/PIECES</span></span></h4>
+								<h4 class="title fs-16"><span class="price1">${$v1['price']}<span class="small1">/{$v1['unit']}</span></span></h4>
 							</div>
 						</div>
 					</article>
